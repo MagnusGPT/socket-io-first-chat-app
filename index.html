@@ -1,0 +1,31 @@
+<input id="username"><br>
+<input id="message">
+<button id="myButton">Tits</button>
+<ul id="allMsgs"></ul>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    let socket = io();
+
+    const msgBox = document.getElementById("message");
+    const username = document.getElementById("username");
+    const button = document.getElementById("myButton");
+
+    button.addEventListener("click", () => {
+        if (username.value !== "") {
+            socket.emit("messageComing", {message: msgBox.value, username: username.value});
+            msgBox.value = "";
+        }
+        else {
+            msgBox.value = "Get a username first you dumdum";
+        }
+    });
+
+    socket.on("messageComing", (value) => {
+        const msg = document.createElement("li");
+        msg.textContent = value;
+
+        const theList = document.getElementById("allMsgs");
+        theList.append(msg)
+    });
+</script>
