@@ -1,7 +1,16 @@
-<input id="username"><br>
-<input id="message">
-<button id="myButton">Tits</button>
-<ul id="allMsgs"></ul>
-
-<script src="/socket.io/socket.io.js"></script>
-<script src="script.js"></script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="chatbox">
+            <label>Username:</label><input id="username"><br>
+            <label>Message:</label><input id="message">
+            <button id="myButton">Send</button>
+            <ul id="allMsgs"></ul>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

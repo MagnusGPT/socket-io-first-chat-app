@@ -23,6 +23,7 @@ msgBox.addEventListener("keydown", (event) => {
 
 socket.on("messageComing", (value) => {
     const msg = document.createElement("li");
+    msg.className = "shownMessage";
     msg.textContent = value;
 
     const theList = document.getElementById("allMsgs");
